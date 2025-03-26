@@ -66,7 +66,7 @@ const Login = () => {
 
       {/* Left Column - Welcome Section */}
       <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-blue-600 to-purple-600 relative justify-center items-center p-12">
-        <div className="relative text-center">
+      <div className="relative text-center">
           {/* Decorative Corner Elements */}
           <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-white/30 rounded-tl-2xl -translate-x-12 -translate-y-12"></div>
           <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-white/30 rounded-br-2xl translate-x-12 translate-y-12"></div>
