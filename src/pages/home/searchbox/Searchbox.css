@@ -1,0 +1,125 @@
+.searchbox {
+    position: relative;
+    width: 85%;
+    max-width: 900px;
+    margin: -60px auto 0;
+    z-index: 10;
+}
+
+.search-form {
+    background: white;
+    padding: 20px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.search-form__field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.search-form__field:last-child {
+    border-right: none;
+}
+
+.search-form__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: #141414;
+}
+
+.search-form__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.search-form__field > div {
+    flex: 1;
+}
+
+.search-form__field label {
+    display: block;
+    color: #141414;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.search-form__field select {
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: #362f2f;
+    width: 100%;
+    padding: 6px 0;
+    cursor: pointer;
+    font-weight: 500;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search-button {
+    background: rgb(219, 54, 54);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background: rgb(170, 32, 32);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .searchbox {
+        width: 92%;
+        margin-top: -50px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .search-form__field {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 12px 0;
+    }
+
+    .search-form__field:last-child {
+        border-bottom: none;
+    }
+
+    .search-form__field label {
+        font-size: 0.9rem;
+    }
+
+    .search-form__field select {
+        font-size: 1.1rem;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+    }
+}

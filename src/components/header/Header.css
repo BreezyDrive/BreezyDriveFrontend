@@ -1,0 +1,61 @@
+/* Header tổng thể */
+.header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: rgb(219, 54, 54) 5px solid;
+  }
+  
+  /* Container cho header */
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    min-height: 68px;
+    margin: 0 auto;
+
+  }
+  
+  /* Logo */
+  .header__logo img {
+    height: 40px;
+  }
+  
+  /* Navigation */
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header__nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  /* Dấu gạch dọc ngăn cách */
+  .header__divider {
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+  }
+  
+  /* Nút đăng nhập */
+  .header__login {
+    padding: 8px 15px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .header__login:hover {
+    background: #f5f5f5;
+  }
+  
