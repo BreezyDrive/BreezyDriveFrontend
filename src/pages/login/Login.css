@@ -1,0 +1,102 @@
+/* Background gradient đỏ-cam */
+.loginpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff512f, #dd2476); /* Đỏ sang cam */
+  }
+  
+  /* Khung form login */
+  .loginform {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+  }
+  
+  /* Tiêu đề Login */
+  .loginform__header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dd2476; /* Màu đỏ */
+    margin-bottom: 1rem;
+  }
+  
+  /* Ô input */
+  .loginform__input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .loginform__input label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .loginform__input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff512f;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .loginform__input input:focus {
+    border-color: #dd2476;
+    outline: none;
+  }
+  
+  /* Nút đăng nhập */
+  .loginform__button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff512f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .loginform__button:hover {
+    background-color: #dd2476;
+  }
+  
+  /* Remember Me */
+  .loginform__rememberMe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .loginform__rememberMe__checkbox {
+    margin-right: 5px;
+  }
+  
+  /* Đăng ký */
+  .loginform__register {
+    font-size: 14px;
+    margin-top: 1rem;
+  }
+  
+  .loginform__register a {
+    color: #ff512f;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .loginform__register a:hover {
+    text-decoration: underline;
+  }
+  
