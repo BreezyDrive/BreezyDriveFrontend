@@ -1,9 +1,9 @@
 /* Hero Section */
 .hero {
     position: relative;
-    width: 90%;
-    max-width: 1200px;
-    height: 460px;
+    width: 100%;
+    max-width: 2000px;
+    height: 500px;
     overflow: hidden;
     margin: 1.5rem auto;
     border-radius: 16px;
@@ -15,7 +15,7 @@
 /* Background Image */
 .hero__background {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 100%;
     overflow: hidden;
     border-radius: 16px;

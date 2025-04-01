@@ -3,6 +3,7 @@ import Hero from "../hero/Hero";
 import Searchbox from "./searchbox/Searchbox";
 import "./Home.css";
 import FeaturedPlace from "./featuredPlaces/FeaturedPlace";
+import CarList from "./carList/CarList";
 
 function Home() {
   return (
@@ -11,6 +12,8 @@ function Home() {
       <Hero></Hero>
       <Searchbox></Searchbox>
       <FeaturedPlace></FeaturedPlace>
+      <CarList></CarList>
+
     </div>
   );
 }
