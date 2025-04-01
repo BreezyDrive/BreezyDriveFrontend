@@ -23,7 +23,17 @@
     gap: 12px;
     padding: 0 16px;
     border-right: 1px solid #e5e7eb;
+    position: relative;
 }
+.search-form__field__option i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(20%);
+    pointer-events: none;
+    font-size: 1.5em;
+}
+
 
 .search-form__field:last-child {
     border-right: none;
