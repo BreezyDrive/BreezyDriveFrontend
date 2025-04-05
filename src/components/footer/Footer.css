@@ -1,0 +1,167 @@
+.footer {
+  background-color: #fff;
+  padding: 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Logo and Contact Section */
+.footer__section--contact {
+  padding-right: 40px;
+}
+
+.footer__logo {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.footer__phone {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer__hours {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer__email {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer__email-label {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer__social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.footer__social-link:hover {
+  background-color: #e0e0e0;
+}
+
+/* Navigation Sections */
+.footer__heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list li {
+  margin-bottom: 12px;
+}
+
+.footer__link {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: #333;
+}
+
+/* Bottom Section */
+.footer__bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 40px 20px 0;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__info {
+  flex: 2;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer__company {
+  margin-bottom: 15px;
+}
+
+.footer__address {
+  max-width: 600px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.footer__registration,
+.footer__banking {
+  margin-top: 15px;
+}
+
+.footer__registration p,
+.footer__banking p {
+  margin: 5px 0;
+}
+
+.footer__payment {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.footer__bct {
+  margin-bottom: 30px;
+}
+
+.footer__bct-image {
+  height: 45px;
+}
+
+.footer__payment-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.footer__payment-logos {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer__payment-logo {
+  height: 24px;
+  object-fit: contain;
+}

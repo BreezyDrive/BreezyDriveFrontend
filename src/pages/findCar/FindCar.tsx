@@ -1,10 +1,7 @@
-import Header from "../../components/header/Header";
-import Hero from "../hero/Hero";
-import Searchbox from "./searchbox/Searchbox";
-import "./Home.css";
-import FeaturedPlace from "./featuredPlaces/FeaturedPlace";
 import CarList from "../../components/carList/CarList";
-import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import "./FindCar.css";
+import "../../assets/css/Base.css";
 
 const carList = [
   {
@@ -41,7 +38,8 @@ const carList = [
   },
   {
     id: 4,
-    image: "https://i1-vnexpress.vnecdn.net/2023/09/05/HondaCityTestVnE20231299jpg-1693904414.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=bqcv0pbVwRqViH8rrrGCLA",
+    image:
+      "https://i1-vnexpress.vnecdn.net/2023/09/05/HondaCityTestVnE20231299jpg-1693904414.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=bqcv0pbVwRqViH8rrrGCLA",
     name: "Honda City",
     features: ["Số tự động", "5 Chỗ", "Xăng"],
     location: "Quận 7, Hồ Chí Minh",
@@ -51,7 +49,8 @@ const carList = [
   },
   {
     id: 5,
-    image: "https://www.ford.com.vn/content/dam/Ford/vn/nameplate/ranger/model/wildtrak/colorizer/360/%C4%91en/vn-wildtrak-absolute-black-01.webp",
+    image:
+      "https://www.ford.com.vn/content/dam/Ford/vn/nameplate/ranger/model/wildtrak/colorizer/360/%C4%91en/vn-wildtrak-absolute-black-01.webp",
     name: "Ford Ranger",
     features: ["Số sàn", "5 Chỗ", "Dầu Diesel"],
     location: "Quận 2, Hồ Chí Minh",
@@ -62,7 +61,8 @@ const carList = [
 
   {
     id: 6,
-    image: "https://static.wixstatic.com/media/b4dcef_c841d8cb9f6b4dbfabbf40ed29333abe~mv2.png/v1/fill/w_568,h_340,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4dcef_c841d8cb9f6b4dbfabbf40ed29333abe~mv2.png",
+    image:
+      "https://static.wixstatic.com/media/b4dcef_c841d8cb9f6b4dbfabbf40ed29333abe~mv2.png/v1/fill/w_568,h_340,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4dcef_c841d8cb9f6b4dbfabbf40ed29333abe~mv2.png",
     name: "Toyota Camry",
     features: ["Số tự động", "5 Chỗ", "Xăng"],
     location: "Quận 5, Hồ Chí Minh",
@@ -72,7 +72,8 @@ const carList = [
   },
   {
     id: 7,
-    image: "https://i1-vnexpress.vnecdn.net/2024/10/09/Hyundai-Tucson-FL-3.jpg?w=2400&h=0&q=100&dpr=1&fit=crop&s=EDsyuX3Vwf1fKNWT_th2kQ&t=image",
+    image:
+      "https://i1-vnexpress.vnecdn.net/2024/10/09/Hyundai-Tucson-FL-3.jpg?w=2400&h=0&q=100&dpr=1&fit=crop&s=EDsyuX3Vwf1fKNWT_th2kQ&t=image",
     name: "Hyundai Tucson",
     features: ["Số tự động", "5 Chỗ", "Dầu Diesel"],
     location: "Quận 10, Hồ Chí Minh",
@@ -82,27 +83,42 @@ const carList = [
   },
   {
     id: 8,
-    image: "https://proauto.vn/wp-content/uploads/2024/05/doi-mau-noi-that-xe-mercedes-gle.png",
+    image:
+      "https://proauto.vn/wp-content/uploads/2024/05/doi-mau-noi-that-xe-mercedes-gle.png",
     name: "Mercedes GLE",
     features: ["Số tự động", "7 Chỗ", "Xăng"],
     location: "Quận 9, Hồ Chí Minh",
     rating: 4.9,
     trips: 9,
     price: "4.500K /ngày",
-  }
+  },
 ];
 
-function Home() {
+function FindCar() {
   return (
-    <div className="homepage">
+    <div className="findCar-page">
       <Header></Header>
-      <Hero></Hero>
-      <Searchbox></Searchbox>
-      <FeaturedPlace></FeaturedPlace>
-      <CarList cars={carList.slice(0, 8)}></CarList>
-      <Footer></Footer>
+      <div className="searchbar">
+        <div className="searchbar__location-time">
+          <p>
+            <i className="fa-solid fa-location-dot"></i>
+            TP.Hồ Chí Minh
+          </p>
+          <p>
+            <i className="fa-solid fa-calendar-days"></i>
+            21:00, 02/04/2025 - 20:00, 03/04/2025
+          </p>
+        </div>
+        <div className="searchbar__divider"></div>
+        <div className="searchbar__filter">
+          
+
+        </div>
+      </div>
+
+      <CarList cars={carList} hideTitle={true}></CarList>
     </div>
   );
 }
 
-export default Home;
+export default FindCar;
