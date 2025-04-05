@@ -1,0 +1,51 @@
+.searchbar {
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    /* margin-top: 1rem; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+
+
+}
+
+.searchbar__location-time{
+    position: absolute;
+    width: 100%;
+    height: calc(15rem/2);
+    top: 0px;
+    text-align: center;
+    
+}
+
+.searchbar__location-time p {
+    white-space: nowrap; 
+    overflow: hidden; 
+    display: inline-block;
+    margin: 3rem 1rem;
+    font-size: 1.7rem;
+
+}
+
+.searchbar__location-time i {
+    margin-right: 1rem;
+}
+
+
+
+.searchbar__divider{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.searchbar__filter {
+    width: 100%;
+    height: calc(15rem/2);
+    position: absolute;
+    bottom: 0;
+}
