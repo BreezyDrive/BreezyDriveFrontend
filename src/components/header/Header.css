@@ -17,9 +17,28 @@
 
   }
   
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
   /* Logo */
   .header__logo img {
-    height: 40px;
+    height: 40px;  }
+
+  .header__logo h2 {
+    margin: 0; /* Tránh đẩy chữ lệch do margin mặc định */
+    font-size: 20px;
+    line-height: 1;  
+    color: rgb(219, 54, 54);
+    font-weight: 600;
+    font-family: 'Lobster', cursive; /* Font chữ Lobster */
+  }
+
+  .header__logo-link {
+    text-decoration: none; /* Bỏ gạch chân */
   }
   
   /* Navigation */

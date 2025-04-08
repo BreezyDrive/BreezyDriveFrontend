@@ -1,13 +1,19 @@
 import "./Header.css"
+import logo from '../../assets/logo.jpg'
+import { Link } from 'react-router-dom'
+
 
 function Header() {
   return (
     <header className="header">
       <div className="header__container">
         {/* Logo */}
+        <Link to="/" className="header__logo-link">        
         <div className="header__logo">
-          <img src='' alt="BreezyDrive Logo" />
+          <img src={logo} alt="BreezyDrive Logo" />
+          <h2>BreezyDrive</h2>
         </div>
+        </Link>
 
         {/* Navigation */}
         <nav className="header__nav">

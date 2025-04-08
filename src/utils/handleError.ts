@@ -1,4 +1,3 @@
-import axios, { AxiosError } from "axios";
 
 /**
  * Hàm xử lý lỗi API
