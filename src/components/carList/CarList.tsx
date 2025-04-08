@@ -1,15 +1,7 @@
 import "./CarList.css";
+import { getCars, Car } from "../../services/carService";
+import { formatPrice } from "../../utils/formatPrice";
 
-interface Car {
-  id: number;
-  image: string;
-  name: string;
-  features: string[];
-  location: string;
-  rating: number;
-  trips: number;
-  price: string;
-}
 
 // Định nghĩa kiểu dữ liệu cho props
 interface CarListProps {
@@ -26,27 +18,21 @@ function CarList({ cars, hideTitle = false }: CarListProps) {
           <div className="carlist__item" key={car.id}>
             <img
               className="carlist__item__image"
-              src={car.image}
-              alt={car.name}
+              src={car.frontImage}
+              alt={car.carModel.name}
             />
-            <h3 className="carlist__item--title">{car.name}</h3>
+            <h3 className="carlist__item--title">{car.carModel.name}</h3>
 
             <div className="carlist__item__feature">
-              {car.features.map((feature, index) => (
-                <span key={index}>
-                  <i
-                    className={
-                      feature.includes("Số sàn") ||
-                      feature.includes("Số tự động")
-                        ? "fa-solid fa-cogs"
-                        : feature.includes("Chỗ")
-                        ? "fa-solid fa-chair"
-                        : "fa-solid fa-gas-pump"
-                    }
-                  ></i>{" "}
-                  {feature}
-                </span>
-              ))}
+              <span>
+                <i className="fa-solid fa-cogs"></i> {car.transmissionType}
+              </span>
+              <span>
+                <i className="fa-solid fa-gas-pump"></i> {car.fuelType}
+              </span>
+              <span>
+                <i className="fa-solid fa-chair"></i> {car.seat} chỗ
+              </span>
             </div>
 
             <div className="carlist__item__location">
@@ -62,16 +48,16 @@ function CarList({ cars, hideTitle = false }: CarListProps) {
               <div className="carlist__item__details">
                 <div className="carlist__item__rating">
                   <i className="fa-solid fa-star"></i>
-                  <span>{car.rating}</span>
+                  <span>5</span>
                 </div>
                 <div className="carlist__item__tripnumber">
                   <i className="fa-solid fa-car-side"></i>
-                  <span>{car.trips} chuyến</span>
+                  <span>{car.numberOfReservation} chuyến</span>
                 </div>
               </div>
 
               <div className="carlist__item__price">
-                <span>{car.price}</span>
+                <span>{formatPrice(car.pricePerDay)}</span>
               </div>
             </div>
           </div>
