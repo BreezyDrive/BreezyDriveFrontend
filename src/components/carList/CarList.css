@@ -1,6 +1,6 @@
 .carlist {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   background-color: #f3f3f3;
 }
 
@@ -12,18 +12,21 @@
 }
 
 .carlist__title {
-  font-size: 35px;
+  font-size: var(--headerh1size);
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .carlist__container {
-  display: grid;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  width: 100%;
 }
+
+
 
 .carlist__item {
   background: white;
@@ -54,10 +57,10 @@
 }
 
 .carlist__item__feature span {
-  display: inline-block;
+  display: inline-flex;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   margin-right: 5px;
   color: #666;
 
@@ -121,18 +124,4 @@
   color: #2c9c42;
   margin-top: 10px;
   font-weight: bold;
-}
-
-/* Nếu màn hình nhỏ hơn 1024px, hiển thị 2 xe trên 1 hàng */
-@media (max-width: 1024px) {
-  .carlist__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Nếu màn hình nhỏ hơn 768px, hiển thị 1 xe trên 1 hàng */
-@media (max-width: 768px) {
-  .carlist__container {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }

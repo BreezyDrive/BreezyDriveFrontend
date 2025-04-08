@@ -5,10 +5,10 @@
 }
 
 .featured__title {
-    font-size: 3rem;
+    font-size: var(--headerh1size);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     color: #141414;
 }
 

@@ -1,0 +1,401 @@
+.car-detail {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.car-detail__main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.car-detail__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Gallery Section */
+.car-gallery {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.car-gallery__main-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.car-gallery__thumbnails {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.car-gallery__thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.car-gallery__actions {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.car-gallery__action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.car-gallery__action-btn:hover {
+  background: #fff;
+  color: #ff4d30;
+}
+
+/* Car Header */
+.car-header {
+  margin: 20px 0;
+}
+
+.car-header__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.car-header__rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+}
+
+.car-header__star {
+  color: #ff4d30;
+}
+
+/* Car Features */
+.car-features {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.car-features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.car-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+}
+
+.car-feature svg {
+  font-size: 24px;
+  color: #ff4d30;
+}
+
+/* Section Styles */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Car Features Detail */
+.car-features-detail {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.car-features-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+}
+
+.feature-item svg {
+  font-size: 22px;
+  /* color: #ff4d30; */
+}
+
+/* Rental Policy */
+.rental-policy {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.rental-policy__content {
+  display: grid;
+  gap: 20px;
+}
+
+.rental-policy__item h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.rental-policy__item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rental-policy__item li {
+  color: #666;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rental-policy__item li::before {
+  content: "•";
+  color: #ff4d30;
+}
+
+/* Car Location */
+.car-location {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.car-location__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+}
+
+.car-location__info svg {
+  color: #ff4d30;
+}
+
+/* Car Owner */
+.car-owner {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.car-owner__profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.car-owner__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.car-owner__name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.car-owner__rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+}
+
+.car-owner__rating svg {
+  color: #ff4d30;
+}
+
+/* Reviews */
+.car-reviews {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.review-item {
+  display: flex;
+  gap: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.review-item__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-item__name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.review-item__rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.review-item__rating svg {
+  color: #ff4d30;
+  font-size: 14px;
+}
+
+.review-item__text {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.review-item__date {
+  color: #999;
+  font-size: 12px;
+}
+
+/* Booking Card */
+.booking-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+.booking-card__price {
+  margin-bottom: 20px;
+}
+
+.booking-card__amount {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff4d30;
+}
+
+.booking-card__unit {
+  color: #666;
+}
+
+.date-picker {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.date-picker__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.date-picker__field label {
+  font-size: 14px;
+  color: #666;
+}
+
+.date-picker__field input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.booking-card__summary {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.booking-card__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.booking-card__total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.booking-card__button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4d30;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-card__button:hover {
+  background-color: #ff3d1f;
+}
+
+/* Car Description */
+.car-description {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.car-description p {
+  color: #666;
+  line-height: 1.6;
+}

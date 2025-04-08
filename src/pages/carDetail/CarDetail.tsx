@@ -1,0 +1,274 @@
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import "./CarDetail.css";
+import { FaHeart, FaShare, FaGasPump, FaCar, FaTachometerAlt, FaSnowflake, FaBluetooth, FaCamera, FaWifi, FaMapMarkerAlt, FaStar } from 'react-icons/fa';
+import { BsFillPeopleFill } from 'react-icons/bs';
+
+const carData = {
+  id: 1,
+  name: "HYUNDAI ACCENT 2023",
+  images: {
+    main: "/car-main.jpg",
+    thumbnails: [
+      "/car-thumb1.jpg",
+      "/car-thumb2.jpg",
+      "/car-thumb3.jpg"
+    ]
+  },
+  rating: {
+    score: 4.5,
+    total: 12
+  },
+  features: {
+    transmission: "Số tự động",
+    seats: "4 chỗ",
+    fuel: "Xăng",
+    consumption: "6L/100km"
+  },
+  description: "HYUNDAI ACCENT 2023 màu trắng,số tự động,xe nhập khẩu từ Hàn Quốc,xe mới đi 1.000km,nội thất nguyên bản,sạch sẽ,bảo dưỡng định kỳ theo hãng.",
+  amenities: [
+    { icon: "bluetooth", name: "Bluetooth" },
+    { icon: "camera", name: "Camera lùi" },
+    { icon: "wifi", name: "Wifi" },
+    { icon: "ac", name: "Điều hòa" }
+  ],
+  rentalPolicy: {
+    documents: [
+      "CMND và GPLX (bản gốc)",
+      "Hộ khẩu hoặc KT3 (bản gốc)"
+    ],
+    deposit: "15 triệu (tiền mặt/chuyển khoản) hoặc Xe máy (kèm cà vẹt gốc) trị giá 15 triệu"
+  },
+  location: "Quận Bình Thạnh, TP Hồ Chí Minh",
+  owner: {
+    name: "Công Tuấn",
+    avatar: "/owner-avatar.jpg",
+    rating: 4.8,
+    trips: 89
+  },
+  reviews: [
+    {
+      id: 1,
+      user: "Nguyễn Văn A",
+      avatar: "/reviewer-avatar.jpg",
+      rating: 5,
+      comment: "Xe rất tốt và sạch sẽ",
+      date: "12/02/2024"
+    }
+  ],
+  pricing: {
+    daily: 803571,
+    serviceFee: 100000
+  }
+};
+
+function CarDetail() {
+  return (
+    <div className="car-detail">
+      <Header />
+      
+      <main className="car-detail__main">
+        {/* Car Gallery Section */}
+        <section className="car-gallery">
+          <div className="car-gallery__main">
+            <img src={carData.images.main} alt={carData.name} className="car-gallery__main-image" />
+          </div>
+          <div className="car-gallery__thumbnails">
+            {carData.images.thumbnails.map((thumb, index) => (
+              <img key={index} src={thumb} alt="" className="car-gallery__thumb" />
+            ))}
+          </div>
+          <div className="car-gallery__actions">
+            <button className="car-gallery__action-btn"><FaHeart /></button>
+            <button className="car-gallery__action-btn"><FaShare /></button>
+          </div>
+        </section>
+
+        <div className="car-detail__content">
+          <div className="car-detail__left">
+            {/* Car Title Section */}
+            <section className="car-header">
+              <h1 className="car-header__title">{carData.name}</h1>
+              <div className="car-header__rating">
+                <FaStar className="car-header__star" />
+                <span>{carData.rating.score}</span>
+                <span className="car-header__reviews">({carData.rating.total} đánh giá)</span>
+              </div>
+            </section>
+
+            {/* Car Features Section */}
+            <section className="car-features">
+              <div className="car-features__grid">
+                <div className="car-feature">
+                  <BsFillPeopleFill />
+                  <span>{carData.features.transmission}</span>
+                </div>
+                <div className="car-feature">
+                  <FaCar />
+                  <span>{carData.features.seats}</span>
+                </div>
+                <div className="car-feature">
+                  <FaGasPump />
+                  <span>{carData.features.fuel}</span>
+                </div>
+                <div className="car-feature">
+                  <FaTachometerAlt />
+                  <span>{carData.features.consumption}</span>
+                </div>
+              </div>
+            </section>
+
+            {/* Car Description */}
+            <section className="car-description">
+              <h2 className="section-title">Mô tả</h2>
+              <p>{carData.description}</p>
+            </section>
+
+            {/* Car Features Detail */}
+            <section className="car-features-detail">
+              <h2 className="section-title">Các tiện nghi khác</h2>
+              <div className="car-features-detail__grid">
+                {carData.amenities.map((amenity, index) => {
+                  let IconComponent;
+                  switch (amenity.icon) {
+                    case 'bluetooth':
+                      IconComponent = FaBluetooth;
+                      break;
+                    case 'camera':
+                      IconComponent = FaCamera;
+                      break;
+                    case 'wifi':
+                      IconComponent = FaWifi;
+                      break;
+                    case 'ac':
+                      IconComponent = FaSnowflake;
+                      break;
+                    default:
+                      IconComponent = FaCar;
+                  }
+
+                  return (
+                    <div key={index} className="feature-item">
+                      <IconComponent />
+                      <span>{amenity.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* Rental Policy */}
+            <section className="rental-policy">
+              <h2 className="section-title">Chính sách thuê xe</h2>
+              <div className="rental-policy__content">
+                <div className="rental-policy__item">
+                  <h3>Giấy tờ thuê xe</h3>
+                  <ul>
+                    {carData.rentalPolicy.documents.map((doc, index) => (
+                      <li key={index}>{doc}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rental-policy__item">
+                  <h3>Tài sản thế chấp</h3>
+                  <p>{carData.rentalPolicy.deposit}</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Location */}
+            <section className="car-location">
+              <h2 className="section-title">Vị trí xe</h2>
+              <div className="car-location__info">
+                <FaMapMarkerAlt />
+                <span>{carData.location}</span>
+              </div>
+            </section>
+
+            {/* Car Owner */}
+            <section className="car-owner">
+              <h2 className="section-title">Chủ xe</h2>
+              <div className="car-owner__profile">
+                <img src={carData.owner.avatar} alt={carData.owner.name} className="car-owner__avatar" />
+                <div className="car-owner__info">
+                  <h3 className="car-owner__name">{carData.owner.name}</h3>
+                  <div className="car-owner__rating">
+                    <FaStar />
+                    <span>{carData.owner.rating}</span>
+                    <span className="car-owner__trips">{carData.owner.trips} chuyến</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Reviews */}
+            <section className="car-reviews">
+              <h2 className="section-title">Đánh giá</h2>
+              <div className="review-list">
+                {carData.reviews.map((review) => (
+                  <div key={review.id} className="review-item">
+                    <img src={review.avatar} alt="" className="review-item__avatar" />
+                    <div className="review-item__content">
+                      <h4 className="review-item__name">{review.user}</h4>
+                      <div className="review-item__rating">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <FaStar key={i} />
+                        ))}
+                      </div>
+                      <p className="review-item__text">{review.comment}</p>
+                      <span className="review-item__date">{review.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          {/* Booking Section */}
+          <div className="car-detail__right">
+            <div className="booking-card">
+              <div className="booking-card__price">
+                <span className="booking-card__amount">{(carData.pricing.daily / 1000).toFixed(0)}K</span>
+                <span className="booking-card__unit">/ngày</span>
+              </div>
+              
+              <div className="booking-card__dates">
+                <div className="date-picker">
+                  <div className="date-picker__field">
+                    <label>Bắt đầu</label>
+                    <input type="text" placeholder="Chọn ngày" />
+                  </div>
+                  <div className="date-picker__field">
+                    <label>Kết thúc</label>
+                    <input type="text" placeholder="Chọn ngày" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="booking-card__summary">
+                <div className="booking-card__row">
+                  <span>Đơn giá thuê</span>
+                  <span>{carData.pricing.daily.toLocaleString()} đ/ngày</span>
+                </div>
+                <div className="booking-card__row">
+                  <span>Phí dịch vụ</span>
+                  <span>{carData.pricing.serviceFee.toLocaleString()} đ</span>
+                </div>
+                <div className="booking-card__total">
+                  <span>Tổng cộng</span>
+                  <span>{(carData.pricing.daily + carData.pricing.serviceFee).toLocaleString()} đ</span>
+                </div>
+              </div>
+
+              <button className="booking-card__button">Đặt xe</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default CarDetail;
