@@ -1,10 +1,18 @@
+
+.section-divider {
+  height: 1px;
+  background-color: #e0e0e0; /* hoặc #ddd */
+  margin: 2rem 0; /* tạo khoảng cách trên dưới */
+  width: 100%;
+}
+
 .car-detail {
-  background-color: #f8f8f8;
+  background-color: hsl(0, 0%, 100%);
   min-height: 100vh;
 }
 
 .car-detail__main {
-  max-width: 1200px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -25,8 +33,9 @@
 
 .car-gallery__main-image {
   width: 100%;
-  height: 500px;
+  height: 50rem;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .car-gallery__thumbnails {
@@ -90,10 +99,12 @@
   align-items: center;
   gap: 5px;
   color: #666;
+  font-size: medium;
 }
 
 .car-header__star {
   color: #ff4d30;
+  font-size: 2rem;
 }
 
 /* Car Features */
@@ -102,6 +113,8 @@
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
+  font-size: 15px;
+  min-height: 150px;
 }
 
 .car-features__grid {
@@ -112,15 +125,37 @@
 
 .car-feature {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
-  color: #666;
+  justify-content: center;
+  color: #4e4847;
 }
 
-.car-feature svg {
-  font-size: 24px;
+.car-feature svg, .car-feature i {
+  font-size: 30px;
   color: #ff4d30;
+  margin-right: 10px;
+}
+
+
+.car-feature__info {
+  text-align: center;
+  flex-direction: column; /* Tách title và strong ra 2 dòng */
+  display: flex;
+}
+
+.car-feature__title {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 5px;
+
+}
+
+.car-feature strong {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  font-weight: 600;
 }
 
 /* Section Styles */
@@ -368,6 +403,7 @@
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #eee;
+  font-size: 20px;
 }
 
 .booking-card__button {

@@ -1,6 +1,8 @@
 import "./CarList.css";
-import { getCars, Car } from "../../services/carService";
+import { Car } from "../../services/carService";
 import { formatPrice } from "../../utils/formatPrice";
+import { useNavigate } from "react-router-dom";
+import { getTransmissionLabel } from "../../utils/transmissionLabel";
 
 
 // Định nghĩa kiểu dữ liệu cho props
@@ -10,12 +12,23 @@ interface CarListProps {
 }
 
 function CarList({ cars, hideTitle = false }: CarListProps) {
+
+  const navigate = useNavigate();
+
+  const handleClick = (id: string) => {
+    navigate(`/carDetail/${id}`);
+  };
+
+
   return (
     <section className="carlist">
       {!hideTitle && <h1 className="carlist__title">Xe dành cho bạn</h1>}
       <div className="carlist__container">
         {cars.map((car:Car) => (
-          <div className="carlist__item" key={car.id}>
+          <div className="carlist__item" 
+          key={car.id}
+
+          onClick={() => handleClick(car.id)}>
             <img
               className="carlist__item__image"
               src={car.frontImage}
@@ -25,7 +38,7 @@ function CarList({ cars, hideTitle = false }: CarListProps) {
 
             <div className="carlist__item__feature">
               <span>
-                <i className="fa-solid fa-cogs"></i> {car.transmissionType}
+                <i className="fa-solid fa-cogs"></i> {getTransmissionLabel(car.transmissionType)}
               </span>
               <span>
                 <i className="fa-solid fa-gas-pump"></i> {car.fuelType}

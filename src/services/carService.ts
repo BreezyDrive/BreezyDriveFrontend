@@ -1,14 +1,7 @@
 import axiosClient from "../utils/axiosClient";
+import { CarModel } from "./carModelService";
 
 const CAR_API_URL = "/cars-api/api/Car";
-
-
-export interface CarModel {
-  id: string;
-  brandId: string;
-  name: string;
-  releaseYear: number;
-}
 
 
 export interface Car {
@@ -38,5 +31,10 @@ export interface Car {
 export const getCars = async (): Promise<Car[]> => {
   const response = await axiosClient.get<Car[]>(`${CAR_API_URL}/GetAllCars`);
   return response.data;
-}
+};
+
+export const getCarByGuid = async (id: string): Promise<Car> => {
+  const response = await axiosClient.get<Car>(`${CAR_API_URL}/GetCarByGuid/${id}`);
+  return response.data;
+};
 
