@@ -1,4 +1,4 @@
-export function formatPrice(price: number): string {
-    const thousands = Math.round(price).toLocaleString("vi-VN"); // "2.000"
-    return `${thousands}K`;
+export function formatPrice(price: number, suffix = "/ngày"): string {
+    const thousands = Math.round(price).toLocaleString("vi-VN"); 
+    return `${thousands}K ${suffix}`;
   }

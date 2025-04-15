@@ -1,0 +1,9 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem; /* 1rem = 16px */
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
