@@ -1,6 +1,7 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import "./CarDetail.css";
+import '../../App.css';
 import {
   FaHeart,
   FaShare,
@@ -111,21 +112,20 @@ function CarDetail() {
       <main className="car-detail__main">
         {/* Car Gallery Section */}
         <section className="car-gallery">
-          <div className="car-gallery__main">
-            <img
-              src={car.frontImage}
-              alt={car.carModel.name}
-              className="car-gallery__main-image"
-            />
+          <div className="car-gallery__main-image">
+            <img src={car.frontImage} alt={car.carModel.name} />
           </div>
-          <div className="car-gallery__thumbnails"></div>
-          <div className="car-gallery__actions">
-            <button className="car-gallery__action-btn">
-              <FaHeart />
-            </button>
-            <button className="car-gallery__action-btn">
-              <FaShare />
-            </button>
+
+          <div className="car-gallery__side-image">
+            <div className="side-image-item">
+              <img src={car.leftImage} alt={car.carModel.name} />
+            </div>
+            <div className="side-image-item">
+              <img src={car.rightImage} alt={car.carModel.name} />
+            </div>
+            <div className="side-image-item">
+              <img src={car.backImage} alt={car.carModel.name} />
+            </div>
           </div>
         </section>
 
@@ -133,7 +133,9 @@ function CarDetail() {
           <div className="car-detail__left">
             {/* Car Title Section */}
             <section className="car-header">
-              <h1 className="car-header__title">{car.carModel.name}</h1>
+              <h1 className="car-header__title">
+                {car.carModel.carBrand.name + " " + car.carModel.name}
+              </h1>
               <div className="car-header__rating">
                 <FaStar className="car-header__star" />
                 <span>{carData.rating.score}</span>
@@ -181,7 +183,6 @@ function CarDetail() {
                 </div>
               </div>
             </section>
-    
 
             <div className="section-divider"></div>
 
@@ -315,9 +316,9 @@ function CarDetail() {
           <div className="car-detail__right">
             <div className="booking-card">
               <div className="booking-card__price">
-                <span className="booking-card__amount">
+                <h2 className="booking-card__amount">
                   {formatPrice(car.pricePerDay)}
-                </span>
+                </h2>
               </div>
 
               <div className="booking-card__dates">

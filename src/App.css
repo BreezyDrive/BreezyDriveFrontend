@@ -7,3 +7,74 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+/* Base font size */
+body {
+  font-size: 16px;
+}
+
+/* Tablet nhỏ (<= 1024px) */
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .car-header__title {
+    font-size: 22px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .car-feature__title, .car-feature strong {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .car-header__title {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .car-feature__title, .car-feature strong {
+    font-size: 13px;
+  }
+
+  .booking-card__amount {
+    font-size: 20px;
+  }
+}
+
+/* Mobile nhỏ (<= 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .car-header__title {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .car-feature__title, .car-feature strong {
+    font-size: 12px;
+  }
+
+  .booking-card__amount {
+    font-size: 18px;
+  }
+}

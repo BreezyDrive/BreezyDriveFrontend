@@ -5,15 +5,13 @@ import Home from "./pages/home/Home";
 import CarDetail from "./pages/carDetail/CarDetail";
 import FindCar from "./pages/findCar/FindCar";
 
-
 function App() {
   return (
-    
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/carDetail/:id" element={<CarDetail />} />
+        <Route path="/car/:name/:id" element={<CarDetail />} />
         <Route path="/findcar" element={<FindCar />} />
       </Routes>
     </Router>

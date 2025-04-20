@@ -107,7 +107,7 @@
   gap: 5px;
   font-size: 14px;
   margin-top: 5px;
-  align-items: self-end;
+  align-items: center;
 }
 
 .carlist__item__tripnumber {
@@ -116,6 +116,8 @@
 
 .carlist__item__rating i {
   color: gold;
+  font-size: 16px;
+  
 }
 
 .carlist__item__price {

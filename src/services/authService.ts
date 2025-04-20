@@ -16,7 +16,6 @@ export interface LoginRequest {
     };
   }
 
-  // Hàm đăng nhập sử dụng Axios
 export const postLogin = async (credentials: LoginRequest): Promise<LoginResponse> => {
 {
       const response = await axiosClient.post<LoginResponse>(`${AUTH_API_URL}/Login`, credentials);
