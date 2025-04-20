@@ -1,7 +1,7 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import "./CarDetail.css";
-import '../../App.css';
+import "../../App.css";
 import {
   FaHeart,
   FaShare,
@@ -20,6 +20,11 @@ import { Car, getCarByGuid } from "../../services/carService";
 import { formatPrice } from "../../utils/formatPrice";
 import { getTransmissionLabel } from "../../utils/transmissionLabel";
 import { getUserByGuid, User } from "../../services/userServices";
+import {
+  CarRating,
+  GetAllCarRatingByCarId,
+  GetCarRatingWithUserByCarId,
+} from "../../services/carRatingService";
 
 const carData = {
   id: 1,
@@ -78,6 +83,7 @@ function CarDetail() {
   const { id } = useParams(); // lấy guid từ URL
   const [car, setCar] = useState<Car | null>(null); // khởi tạo state car với giá trị null
   const [owner, setOwner] = useState<User | null>(null); // khởi tạo state owner với giá trị null
+  const [ratings, setRatings] = useState<CarRating[]>([]); // khởi tạo state ratings với giá trị là mảng rỗng
 
   useEffect(() => {
     if (id) {
@@ -99,6 +105,18 @@ function CarDetail() {
         })
         .catch((error) => {
           console.error("Lỗi khi lấy thông tin chủ xe:", error); // xử lý lỗi nếu có
+        });
+    }
+  });
+
+  useEffect(() => {
+    if (id) {
+      GetCarRatingWithUserByCarId(id)
+        .then((data) => {
+          setRatings(data); // cập nhật state ratings với dữ liệu trả về
+        })
+        .catch((error) => {
+          console.error("Lỗi khi lấy thông tin đánh giá xe:", error); // xử lý lỗi nếu có
         });
     }
   });
@@ -289,22 +307,22 @@ function CarDetail() {
             <section className="car-reviews">
               <h2 className="section-title">Đánh giá</h2>
               <div className="review-list">
-                {carData.reviews.map((review) => (
-                  <div key={review.id} className="review-item">
+                {ratings.map((rating) => (
+                  <div key={rating.id} className="review-item">
                     <img
-                      src={review.avatar}
+                      src={rating.user?.avatar}
                       alt=""
                       className="review-item__avatar"
                     />
                     <div className="review-item__content">
-                      <h4 className="review-item__name">{review.user}</h4>
+                      <h4 className="review-item__name">{rating.user?.name}</h4>
                       <div className="review-item__rating">
-                        {[...Array(review.rating)].map((_, i) => (
+                        {[...Array(rating.star)].map((_, i) => (
                           <FaStar key={i} />
                         ))}
                       </div>
-                      <p className="review-item__text">{review.comment}</p>
-                      <span className="review-item__date">{review.date}</span>
+                      <p className="review-item__text">{rating.comment}</p>
+                      <span className="review-item__date">{rating.date}</span>
                     </div>
                   </div>
                 ))}
