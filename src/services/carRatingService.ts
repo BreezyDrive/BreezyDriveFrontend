@@ -31,7 +31,7 @@ export const GetCarRatingWithUserByCarId = async (carId : string): Promise<CarRa
     const ratingsData = await GetAllCarRatingByCarId(carId);
 
     const ratingsWithUser = await Promise.all(
-        (await ratingsData).map(async (rating) => {
+        (ratingsData).map(async (rating) => {
             const user = await getUserByGuid(rating.userId);
             return {
                 ...rating,
