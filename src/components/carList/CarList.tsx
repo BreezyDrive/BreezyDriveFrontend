@@ -15,8 +15,9 @@ function CarList({ cars, hideTitle = false }: CarListProps) {
 
   const navigate = useNavigate();
 
-  const handleClick = (id: string) => {
-    navigate(`/carDetail/${id}`);
+  const handleClick = (id: string, name: string) => {
+    const formattedName = name.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/car/${formattedName}/${id}`);
   };
 
 
@@ -28,7 +29,7 @@ function CarList({ cars, hideTitle = false }: CarListProps) {
           <div className="carlist__item" 
           key={car.id}
 
-          onClick={() => handleClick(car.id)}>
+          onClick={() => handleClick(car.id, car.carModel.name)}>
             <img
               className="carlist__item__image"
               src={car.frontImage}
