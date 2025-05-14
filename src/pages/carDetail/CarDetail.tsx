@@ -3,8 +3,6 @@ import Header from "../../components/header/Header";
 import "./CarDetail.css";
 import "../../App.css";
 import {
-  FaHeart,
-  FaShare,
   FaCar,
   FaTachometerAlt,
   FaSnowflake,
@@ -22,7 +20,6 @@ import { getTransmissionLabel } from "../../utils/transmissionLabel";
 import { getUserByGuid, User } from "../../services/userServices";
 import {
   CarRating,
-  GetAllCarRatingByCarId,
   GetCarRatingWithUserByCarId,
 } from "../../services/carRatingService";
 
