@@ -5,7 +5,8 @@ import "./Home.css";
 import FeaturedPlace from "./featuredPlaces/FeaturedPlace";
 import CarList from "../../components/carList/CarList";
 import Footer from "../../components/footer/Footer";
-import { getCars, Car } from "../../services/carService";
+import { getCars } from "../../services/carService";
+import { Car } from "../../models/car";
 import { useEffect, useState } from "react";
 // const carList = [
 //   {

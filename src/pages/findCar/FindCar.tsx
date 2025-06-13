@@ -3,7 +3,8 @@ import Header from "../../components/header/Header";
 import "./FindCar.css";
 import "../../assets/css/Base.css";
 import { useEffect, useState } from "react";
-import { getCars, Car } from "../../services/carService";
+import { getCars } from "../../services/carService";
+import { Car } from "../../models/car";
 
 
 function FindCar() {

@@ -1,5 +1,5 @@
 import "./CarList.css";
-import { Car } from "../../services/carService";
+import { Car } from "../../models/car";
 import { formatPrice } from "../../utils/formatPrice";
 import { useNavigate } from "react-router-dom";
 import { getTransmissionLabel } from "../../utils/transmissionLabel";

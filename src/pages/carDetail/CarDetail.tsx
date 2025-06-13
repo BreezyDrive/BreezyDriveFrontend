@@ -14,14 +14,17 @@ import {
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Car, getCarByGuid } from "../../services/carService";
-import { formatPrice } from "../../utils/formatPrice";
-import { getTransmissionLabel } from "../../utils/transmissionLabel";
-import { getUserByGuid, User } from "../../services/userServices";
+import { getCarByGuid } from "../../services/carService";
+import { Car } from "../../models/car";
+import { getUserByGuid } from "../../services/userServices";
+import { User } from "../../models/user";
 import {
-  CarRating,
+  GetAllCarRatingByCarId,
   GetCarRatingWithUserByCarId,
 } from "../../services/carRatingService";
+import { CarRating } from "../../models/carRating";
+import { formatPrice } from "../../utils/formatPrice";
+import { getTransmissionLabel } from "../../utils/transmissionLabel";
 
 const carData = {
   id: 1,
