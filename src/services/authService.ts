@@ -1,32 +1,7 @@
 import axiosClient from "../utils/axiosClient";
+import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse } from "../models/auth";
 
 const AUTH_API_URL = '/authentication-api/api/Authentication';
-
-export interface LoginRequest {
-    phone: string;
-    password: string;
-}
-  
-export interface LoginResponse {
-    token: string;
-    user: {
-        id: string;
-        email: string;
-        name: string;
-    };
-}
-
-export interface RegisterRequest {
-    fullName: string;
-    phone: string;
-    email: string;
-    password: string;
-}
-
-export interface RegisterResponse {
-    success: boolean;
-    message: string;
-}
 
 export const postLogin = async (credentials: LoginRequest): Promise<LoginResponse> => {
     const response = await axiosClient.post<LoginResponse>(`${AUTH_API_URL}/Login`, credentials);
