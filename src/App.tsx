@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import CarDetail from "./pages/carDetail/CarDetail";
 import FindCar from "./pages/findCar/FindCar";
 import Register from "./pages/register/Register";
+import Test from "./pages/test/Test";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/car/:name/:id" element={<CarDetail />} />
         <Route path="/findcar" element={<FindCar />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );

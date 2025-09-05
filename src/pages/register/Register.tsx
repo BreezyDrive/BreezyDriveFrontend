@@ -1,5 +1,5 @@
 import "./Register.css";
-import { FaUser, FaLock, FaEnvelope, FaPhone, FaCheckSquare } from "react-icons/fa";
+import { FaUser, FaLock, FaEnvelope, FaPhone } from "react-icons/fa";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { AxiosError } from "axios";

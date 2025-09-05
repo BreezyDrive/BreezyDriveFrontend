@@ -1,0 +1,67 @@
+.test {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.test h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.test__section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.test__section h2 {
+  color: #ff512f;
+  margin-bottom: 15px;
+}
+
+.test button {
+  background-color: #ff512f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.test button:hover {
+  background-color: #ff3d1f;
+}
+
+.test input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.test input:focus {
+  outline: none;
+  border-color: #ff512f;
+}
+
+.test ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.test li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.test li:last-child {
+  border-bottom: none;
+} 

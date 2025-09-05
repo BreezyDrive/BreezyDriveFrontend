@@ -19,7 +19,6 @@ import { Car } from "../../models/car";
 import { getUserByGuid } from "../../services/userServices";
 import { User } from "../../models/user";
 import {
-  GetAllCarRatingByCarId,
   GetCarRatingWithUserByCarId,
 } from "../../services/carRatingService";
 import { CarRating } from "../../models/carRating";
@@ -99,27 +98,27 @@ function CarDetail() {
 
   useEffect(() => {
     if (car?.userId) {
-      getUserByGuid(car.userId) // gọi hàm getUserByGuid với userId từ car
+      getUserByGuid(car.userId)
         .then((data) => {
-          setOwner(data); // cập nhật state owner với dữ liệu trả về
+          setOwner(data);
         })
         .catch((error) => {
-          console.error("Lỗi khi lấy thông tin chủ xe:", error); // xử lý lỗi nếu có
+          console.error("Lỗi khi lấy thông tin chủ xe:", error);
         });
     }
-  });
+  }, [car?.userId]);
 
   useEffect(() => {
     if (id) {
       GetCarRatingWithUserByCarId(id)
         .then((data) => {
-          setRatings(data); // cập nhật state ratings với dữ liệu trả về
+          setRatings(data);
         })
         .catch((error) => {
-          console.error("Lỗi khi lấy thông tin đánh giá xe:", error); // xử lý lỗi nếu có
+          console.error("Lỗi khi lấy thông tin đánh giá xe:", error);
         });
     }
-  });
+  }, [id]);
 
   if (!car) return <div>Đang tải...</div>;
 
